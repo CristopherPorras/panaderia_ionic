@@ -1,70 +1,60 @@
-# Specifies intentionally untracked files to ignore when using Git
-# http://git-scm.com/docs/gitignore
+# === Ionic/Angular builds ===
+www/
+dist/
+android/
+ios/
 
-*~
-*.sw[mnpcod]
-.tmp
-*.tmp
-*.tmp.*
-UserInterfaceState.xcuserstate
-$RECYCLE.BIN/
+# === Node/npm/Yarn/Pnpm ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.yarn-integrity
+.pnp.*
 
-*.log
-log.txt
-
-
-/.sourcemaps
-/.versions
-/coverage
-
-# Ionic
-/.ionic
-/www
-/platforms
-/plugins
-
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
-
-# Node
-/node_modules
-npm-debug.log
-yarn-error.log
-
-# IDEs and editors
+# === Cache y temporales ===
+.cache/
+.parcel-cache
+.angular
 .idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-project
-*.sublime-workspace
-
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
-
-
-# Miscellaneous
-/.angular
-/.angular/cache
-.sass-cache/
-/.nx
-/.nx/cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
-
-# System files
 .DS_Store
-Thumbs.db
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+.nyc_output/
+coverage/
+*.lcov
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# === Archivos de entorno ===
+.env
+.env.*.local
+.env.local
+
+# === VSCode
+.vscode-test
+.vscode/
+
+# === Salidas de compilación
+build/
+lib-cov/
+*.tgz
+
+# === Otros
+logs/
+*.log
+*.pid
+*.seed
+*.pid.lock
+bower_components
+jspm_packages
+web_modules/
+.docusaurus/
+.serverless/
+.dynamodb/
+.tern-port
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
