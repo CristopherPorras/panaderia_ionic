@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Safely check if productos is defined and has items -->
+  <ion-list *ngIf="productos && productos.length > 0; else sinProductos">
+    <ion-item *ngFor="let producto of productos">
+      <ion-thumbnail slot="start">
+        <img [src]="producto.imagen || 'assets/images/default.png'" alt="Imagen del producto"
+             (error)="producto.imagen = 'assets/images/default.png'" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ producto.descripcion }}</h2>
+        <p>Valor Unitario: {{ producto.valor_unitario | currency:'COP' }}</p>
+        <p>Categoría: {{ producto.categoria_id }}</p>
+        <p>Stock: {{ producto.cantidad_stock }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #sinProductos>
+    <ion-text color="medium">
+      <p class="ion-text-center">No hay productos disponibles.</p>
+    </ion-text>
+  </ng-template>
+</ion-content>

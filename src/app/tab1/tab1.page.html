@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="guardarProducto()">
+    
+    <!-- Descripción -->
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-input formControlName="descripcion" required></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="form.get('descripcion')?.touched && form.get('descripcion')?.invalid">
+      <small>La descripción es obligatoria.</small>
+    </ion-text>
+
+    <!-- Valor Unitario -->
+    <ion-item>
+      <ion-label position="floating">Valor Unitario</ion-label>
+      <ion-input type="number" formControlName="valor_unitario" required></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="form.get('valor_unitario')?.touched && form.get('valor_unitario')?.invalid">
+      <small>Ingrese un valor numérico válido.</small>
+    </ion-text>
+
+    <!-- Unidad de Medida -->
+    <ion-item>
+      <ion-label position="floating">Unidad de Medida</ion-label>
+      <ion-input formControlName="unidad_medida" required></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="form.get('unidad_medida')?.touched && form.get('unidad_medida')?.invalid">
+      <small>Debe especificar una unidad.</small>
+    </ion-text>
+
+    <!-- Cantidad en Stock -->
+    <ion-item>
+      <ion-label position="floating">Cantidad en Stock</ion-label>
+      <ion-input type="number" formControlName="cantidad_stock" required></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="form.get('cantidad_stock')?.touched && form.get('cantidad_stock')?.invalid">
+      <small>Ingrese una cantidad válida.</small>
+    </ion-text>
+
+    <!-- Categoría -->
+    <ion-item>
+      <ion-label position="floating">Categoría</ion-label>
+      <ion-input formControlName="categoria" required></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="form.get('categoria')?.touched && form.get('categoria')?.invalid">
+      <small>Seleccione o indique una categoría válida.</small>
+    </ion-text>
+
+    <!-- Imagen -->
+    <ion-item>
+      <ion-label position="floating">Imagen (URL)</ion-label>
+      <ion-input formControlName="imagen"></ion-input>
+    </ion-item>
+
+    <!-- Botón de envío -->
+    <ion-button expand="full" type="submit" [disabled]="form.invalid">Guardar Producto</ion-button>
+
+  </form>
+</ion-content>
